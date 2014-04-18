@@ -1,8 +1,11 @@
 require "rails/generators"
+require_relative "helpers/generator_helpers"
 
 module Statesman
   class ActiveRecordTransitionGenerator < Rails::Generators::Base
-    desc "Create an ActiveRecord-based transition model"\
+    include GeneratorHelpers
+
+    desc "Create an ActiveRecord-based transition model" +
          "with the required attributes"
 
     argument :parent, type: :string, desc: "Your parent model name"
